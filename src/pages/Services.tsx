@@ -1,7 +1,10 @@
 import Layout from "@/components/layout/Layout";
 import { Car, KeyRound, ShoppingCart, Users2, Shield, Clock, DollarSign } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import rideSharingImg from "@/assets/service-ridesharing.jpg";
+import rentalImg from "@/assets/service-rental.jpg";
+import preOwnedImg from "@/assets/service-preowned.jpg";
+import poolingImg from "@/assets/service-pooling.jpg";
 
 const Services = () => {
   const services = [
@@ -9,8 +12,9 @@ const Services = () => {
       id: "ride-sharing",
       icon: Car,
       title: "Ride Sharing",
-      status: "Active Now",
-      isActive: true,
+      status: "Coming Soon",
+      isActive: false,
+      image: rideSharingImg,
       description:
         "Connect with verified riders and drivers in your community. Share your daily commute, save money, and reduce traffic congestion.",
       features: [
@@ -26,6 +30,7 @@ const Services = () => {
       title: "Car Rental",
       status: "Coming Soon",
       isActive: false,
+      image: rentalImg,
       description:
         "Rent verified cars by the hour or day. Perfect for weekend trips, special occasions, or when you need temporary wheels.",
       features: [
@@ -41,6 +46,7 @@ const Services = () => {
       title: "Pre-Owned Cars",
       status: "Coming Soon",
       isActive: false,
+      image: preOwnedImg,
       description:
         "Buy or sell verified used cars with confidence. Our platform ensures quality, transparency, and fair pricing for all transactions.",
       features: [
@@ -56,6 +62,7 @@ const Services = () => {
       title: "Driver Pooling",
       status: "Coming Soon",
       isActive: false,
+      image: poolingImg,
       description:
         "Collaborate with professional long-haul drivers for intercity journeys. Safe, comfortable, and economical travel across India.",
       features: [
@@ -93,7 +100,7 @@ const Services = () => {
                 <TabsTrigger
                   key={service.id}
                   value={service.id}
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[hsl(258,69%,35%)] data-[state=active]:via-[hsl(330,81%,60%)] data-[state=active]:to-[hsl(351,89%,60%)] data-[state=active]:text-white rounded-xl py-4 text-sm font-medium transition-all duration-300"
+                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[hsl(258,69%,35%)] data-[state=active]:via-[hsl(330,81%,60%)] data-[state=active]:to-[hsl(351,89%,60%)] data-[state=active]:text-white rounded-xl py-4 text-sm font-medium transition-all"
                 >
                   <service.icon className="w-4 h-4 mr-2" />
                   {service.title}
@@ -115,13 +122,7 @@ const Services = () => {
                         </div>
                         <div>
                           <h2 className="text-3xl font-bold text-foreground">{service.title}</h2>
-                          <span
-                            className={`inline-block mt-1 px-3 py-1 rounded-full text-xs font-medium ${
-                              service.isActive
-                                ? "bg-gradient-to-r from-[hsl(258,69%,35%)] via-[hsl(330,81%,60%)] to-[hsl(351,89%,60%)] text-white"
-                                : "bg-secondary text-muted-foreground"
-                            }`}
-                          >
+                          <span className="inline-block mt-1 px-3 py-1 rounded-full text-xs font-medium bg-secondary text-muted-foreground">
                             {service.status}
                           </span>
                         </div>
@@ -140,25 +141,19 @@ const Services = () => {
                         ))}
                       </div>
 
-                      {service.isActive && (
-                        <Button variant="gradient" size="lg" className="w-full lg:w-auto">
-                          Book or Offer Ride
-                        </Button>
-                      )}
-                      {!service.isActive && (
-                        <Button variant="outline" size="lg" className="w-full lg:w-auto" disabled>
-                          Coming Soon
-                        </Button>
-                      )}
+                      <div className="inline-flex items-center px-4 py-2 rounded-lg bg-secondary text-muted-foreground text-sm font-medium">
+                        Coming Soon
+                      </div>
                     </div>
 
                     {/* Right: Visual */}
                     <div className="relative">
-                      <div
-                        className={`aspect-square rounded-3xl bg-gradient-to-br ${service.color} opacity-10 animate-pulse`}
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <service.icon className="w-48 h-48 text-muted-foreground/20" />
+                      <div className="aspect-square rounded-3xl overflow-hidden">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     </div>
                   </div>

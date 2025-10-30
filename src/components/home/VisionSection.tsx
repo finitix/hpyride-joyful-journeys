@@ -1,4 +1,7 @@
 import { Route, Handshake, Globe } from "lucide-react";
+import connectedImg from "@/assets/vision-connected.jpg";
+import communityImg from "@/assets/vision-community.jpg";
+import sustainableImg from "@/assets/vision-sustainable.jpg";
 
 const VisionSection = () => {
   const visionPoints = [
@@ -6,16 +9,19 @@ const VisionSection = () => {
       icon: Route,
       title: "Connected Rides",
       description: "Smart matching algorithms connect riders and drivers for seamless journeys.",
+      image: connectedImg,
     },
     {
       icon: Handshake,
       title: "Community Impact",
       description: "Every ride strengthens our community and supports local initiatives.",
+      image: communityImg,
     },
     {
       icon: Globe,
       title: "Sustainable Future",
       description: "Shared mobility reduces carbon footprint for a greener tomorrow.",
+      image: sustainableImg,
     },
   ];
 
@@ -37,33 +43,33 @@ const VisionSection = () => {
         {/* Vision Points */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {visionPoints.map((point, index) => (
-            <div
-              key={point.title}
-              className="group relative animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
+            <div key={point.title} className="group relative">
               {/* Card */}
-              <div className="relative bg-card rounded-2xl p-8 h-full shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
-                {/* Icon */}
-                <div className="mb-6 flex justify-center">
-                  <div className="relative">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[hsl(258,69%,35%)] via-[hsl(330,81%,60%)] to-[hsl(351,89%,60%)] flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
-                      <point.icon className="w-10 h-10 text-white" />
-                    </div>
-                    <div className="absolute inset-0 w-20 h-20 rounded-full bg-gradient-to-br from-[hsl(258,69%,35%)] via-[hsl(330,81%,60%)] to-[hsl(351,89%,60%)] blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-                  </div>
+              <div className="relative bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                {/* Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={point.image}
+                    alt={point.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-60" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-semibold text-center mb-3 text-foreground group-hover:gradient-text transition-all duration-300">
-                  {point.title}
-                </h3>
-                <p className="text-muted-foreground text-center leading-relaxed">{point.description}</p>
+                <div className="p-8">
+                  {/* Icon */}
+                  <div className="mb-6 flex justify-center">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[hsl(258,69%,35%)] via-[hsl(330,81%,60%)] to-[hsl(351,89%,60%)] flex items-center justify-center">
+                      <point.icon className="w-8 h-8 text-white" />
+                    </div>
+                  </div>
 
-                {/* Connecting line (visible on desktop between cards) */}
-                {index < visionPoints.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-accent to-transparent opacity-30 group-hover:opacity-60 transition-opacity duration-300" />
-                )}
+                  <h3 className="text-xl font-semibold text-center mb-3 text-foreground">
+                    {point.title}
+                  </h3>
+                  <p className="text-muted-foreground text-center leading-relaxed">{point.description}</p>
+                </div>
               </div>
             </div>
           ))}

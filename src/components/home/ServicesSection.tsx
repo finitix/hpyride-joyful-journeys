@@ -1,5 +1,8 @@
 import { Car, KeyRound, ShoppingCart, Users2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import rideSharingImg from "@/assets/service-ridesharing.jpg";
+import rentalImg from "@/assets/service-rental.jpg";
+import preOwnedImg from "@/assets/service-preowned.jpg";
+import poolingImg from "@/assets/service-pooling.jpg";
 
 const ServicesSection = () => {
   const services = [
@@ -7,9 +10,10 @@ const ServicesSection = () => {
       icon: Car,
       title: "Ride Sharing",
       description: "Find or offer rides with trusted users in your community.",
-      status: "active",
-      badge: "Active Now",
+      status: "coming-soon",
+      badge: "Coming Soon",
       color: "from-[hsl(258,69%,35%)] to-[hsl(330,81%,60%)]",
+      image: rideSharingImg,
     },
     {
       icon: KeyRound,
@@ -18,6 +22,7 @@ const ServicesSection = () => {
       status: "coming-soon",
       badge: "Coming Soon",
       color: "from-[hsl(330,81%,60%)] to-[hsl(351,89%,60%)]",
+      image: rentalImg,
     },
     {
       icon: ShoppingCart,
@@ -26,6 +31,7 @@ const ServicesSection = () => {
       status: "coming-soon",
       badge: "Coming Soon",
       color: "from-[hsl(351,89%,60%)] to-[hsl(258,69%,35%)]",
+      image: preOwnedImg,
     },
     {
       icon: Users2,
@@ -34,6 +40,7 @@ const ServicesSection = () => {
       status: "coming-soon",
       badge: "Coming Soon",
       color: "from-[hsl(258,69%,35%)] to-[hsl(330,81%,60%)]",
+      image: poolingImg,
     },
   ];
 
@@ -55,71 +62,40 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className={`relative group bg-card rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 animate-fade-in-up ${
-                service.status === "active"
-                  ? "shadow-xl hover:shadow-2xl border-2 border-transparent hover:gradient-border"
-                  : "shadow-md hover:shadow-lg opacity-75 hover:opacity-100"
-              }`}
+              className="relative group bg-card rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              {/* Status Badge */}
-              <div className="absolute top-6 right-6">
-                <span
-                  className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
-                    service.status === "active"
-                      ? "bg-gradient-to-r from-[hsl(258,69%,35%)] via-[hsl(330,81%,60%)] to-[hsl(351,89%,60%)] text-white animate-glow"
-                      : "bg-secondary text-muted-foreground"
-                  }`}
-                >
-                  {service.badge}
-                </span>
-              </div>
-
-              {/* Icon */}
-              <div className="mb-6">
-                <div
-                  className={`w-16 h-16 rounded-2xl flex items-center justify-center transform transition-all duration-300 ${
-                    service.status === "active"
-                      ? `bg-gradient-to-br ${service.color} group-hover:scale-110 group-hover:rotate-6`
-                      : "bg-secondary group-hover:scale-105"
-                  }`}
-                >
-                  <service.icon
-                    className={`w-8 h-8 ${service.status === "active" ? "text-white" : "text-muted-foreground"}`}
-                  />
+              {/* Service Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-60" />
+                
+                {/* Status Badge */}
+                <div className="absolute top-4 right-4">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary text-muted-foreground">
+                    {service.badge}
+                  </span>
                 </div>
-                {service.status === "active" && (
-                  <div
-                    className={`absolute top-[4.5rem] left-8 w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300`}
-                  />
-                )}
               </div>
 
               {/* Content */}
-              <h3
-                className={`text-2xl font-semibold mb-3 transition-all duration-300 ${
-                  service.status === "active" ? "gradient-text" : "text-foreground group-hover:text-primary"
-                }`}
-              >
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">{service.description}</p>
+              <div className="p-8">
+                {/* Icon */}
+                <div className="mb-6">
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center bg-gradient-to-br ${service.color}`}>
+                    <service.icon className="w-8 h-8 text-white" />
+                  </div>
+                </div>
 
-              {/* CTA Button */}
-              {service.status === "active" && (
-                <Button variant="gradient" className="w-full">
-                  Book or Offer Ride
-                </Button>
-              )}
-
-              {/* Decorative corner */}
-              <div
-                className={`absolute bottom-0 right-0 w-32 h-32 rounded-tl-full transition-opacity duration-300 ${
-                  service.status === "active"
-                    ? "bg-gradient-to-tl from-accent/10 to-transparent opacity-0 group-hover:opacity-100"
-                    : "bg-secondary/50 opacity-0 group-hover:opacity-50"
-                }`}
-              />
+                <h3 className="text-2xl font-semibold mb-3 text-foreground">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">{service.description}</p>
+              </div>
             </div>
           ))}
         </div>

@@ -67,9 +67,6 @@ const Header = () => {
             <Button variant="gradient" size="default">
               Download App
             </Button>
-            <Button variant="outline" size="default">
-              Sign In
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -103,9 +100,6 @@ const Header = () => {
               <div className="flex flex-col space-y-2 px-4 pt-4 border-t border-border">
                 <Button variant="gradient" size="default" className="w-full">
                   Download App
-                </Button>
-                <Button variant="outline" size="default" className="w-full">
-                  Sign In
                 </Button>
               </div>
             </nav>
