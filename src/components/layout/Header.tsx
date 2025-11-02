@@ -35,10 +35,10 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
+          <Link to="/" className="flex items-center space-x-1 md:space-x-2 group">
             <div className="relative">
-              <span className="text-2xl font-bold gradient-text">HpyRide</span>
-              <span className="text-2xl font-light text-foreground">.Com</span>
+              <span className="text-xl md:text-2xl font-bold gradient-text">HpyRide</span>
+              <span className="text-xl md:text-2xl font-light text-foreground">.Com</span>
               <div className="absolute -inset-2 bg-gradient-to-r from-[hsl(258,69%,35%)] via-[hsl(330,81%,60%)] to-[hsl(351,89%,60%)] rounded-lg opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300" />
             </div>
           </Link>
@@ -64,8 +64,11 @@ const Header = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="gradient" size="default">
+            <Button variant="gradient" size="default" className="hidden lg:inline-flex">
               Download App
+            </Button>
+            <Button variant="gradient" size="sm" className="inline-flex lg:hidden">
+              Get App
             </Button>
           </div>
 
@@ -99,7 +102,7 @@ const Header = () => {
               ))}
               <div className="flex flex-col space-y-2 px-4 pt-4 border-t border-border">
                 <Button variant="gradient" size="default" className="w-full">
-                  Download App
+                  Get App
                 </Button>
               </div>
             </nav>

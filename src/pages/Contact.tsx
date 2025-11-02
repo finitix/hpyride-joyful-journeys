@@ -31,9 +31,9 @@ const Contact = () => {
   };
 
   const socialLinks = [
-    { icon: Linkedin, label: "LinkedIn", href: "#", username: "@hpyride" },
-    { icon: Instagram, label: "Instagram", href: "#", username: "@hpyride" },
-    { icon: Youtube, label: "YouTube", href: "#", username: "@hpyride" },
+    { icon: Linkedin, label: "LinkedIn", href: "#", username: "@hpyride.com" },
+    { icon: Instagram, label: "Instagram", href: "#", username: "@hpyride.com" },
+    { icon: Youtube, label: "YouTube", href: "#", username: "@hpyride.com" },
   ];
 
   return (

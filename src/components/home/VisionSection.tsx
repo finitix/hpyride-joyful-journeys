@@ -26,28 +26,28 @@ const VisionSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-16 md:py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Vision Statement */}
-        <div className="text-center mb-16 animate-fade-in-up max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+        <div className="text-center mb-12 md:mb-16 animate-fade-in-up max-w-4xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
             Our Vision — <span className="gradient-text">Driving India Forward</span>
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-            At <span className="font-semibold text-primary">HpyRide</span>, we believe mobility should be
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed px-4">
+            At <span className="font-semibold text-primary">HpyRide.Com</span>, we believe mobility should be
             joyful, safe, and accessible for everyone. Our goal is to connect riders and drivers through
             trust, innovation, and empathy.
           </p>
         </div>
 
         {/* Vision Points */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
           {visionPoints.map((point, index) => (
             <div key={point.title} className="group relative">
               {/* Card */}
               <div className="relative bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
                 {/* Image */}
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-40 md:h-48 overflow-hidden">
                   <img
                     src={point.image}
                     alt={point.title}
@@ -57,7 +57,7 @@ const VisionSection = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-8">
+                <div className="p-6 md:p-8">
                   {/* Icon */}
                   <div className="mb-6 flex justify-center">
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[hsl(258,69%,35%)] via-[hsl(330,81%,60%)] to-[hsl(351,89%,60%)] flex items-center justify-center">
@@ -65,10 +65,10 @@ const VisionSection = () => {
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-semibold text-center mb-3 text-foreground">
+                  <h3 className="text-lg md:text-xl font-semibold text-center mb-2 md:mb-3 text-foreground">
                     {point.title}
                   </h3>
-                  <p className="text-muted-foreground text-center leading-relaxed">{point.description}</p>
+                  <p className="text-sm md:text-base text-muted-foreground text-center leading-relaxed">{point.description}</p>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@ const VisionSection = () => {
         </div>
 
         {/* Bottom gradient line animation */}
-        <div className="mt-16 max-w-4xl mx-auto">
+        <div className="mt-12 md:mt-16 max-w-4xl mx-auto px-4">
           <div className="h-1 w-full bg-gradient-to-r from-transparent via-accent to-transparent rounded-full opacity-30 animate-pulse" />
         </div>
       </div>

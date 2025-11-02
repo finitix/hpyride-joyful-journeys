@@ -20,7 +20,7 @@ const CTASection = () => {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-16 md:py-20 relative overflow-hidden">
       {/* Gradient background with wave animation */}
       <div className="absolute inset-0 bg-gradient-to-r from-[hsl(258,69%,35%)] via-[hsl(330,81%,60%)] to-[hsl(351,89%,60%)]">
         <div className="absolute inset-0 opacity-30">
@@ -39,15 +39,15 @@ const CTASection = () => {
           </div>
 
           {/* Heading */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
             We're Coming Soon!
           </h2>
-          <p className="text-lg sm:text-xl text-white/90 mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 md:mb-8 px-4">
             Join thousands waiting for the future of Indian mobility.
           </p>
 
           {/* Email signup form */}
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-8">
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 md:gap-4 max-w-md mx-auto mb-6 md:mb-8 px-4">
             <Input
               type="email"
               placeholder="Enter your email"
@@ -67,18 +67,18 @@ const CTASection = () => {
           </form>
 
           {/* Stats */}
-          <div className="flex flex-wrap justify-center gap-8 text-white">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8 text-white px-4">
             <div className="text-center">
-              <div className="text-2xl font-bold">10,000+</div>
-              <div className="text-sm text-white/80">In Waitlist</div>
+              <div className="text-xl md:text-2xl font-bold">10,000+</div>
+              <div className="text-xs md:text-sm text-white/80">In Waitlist</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold">4 Cities</div>
-              <div className="text-sm text-white/80">Launching First</div>
+              <div className="text-xl md:text-2xl font-bold">4 Cities</div>
+              <div className="text-xs md:text-sm text-white/80">Launching First</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold">Q2 2025</div>
-              <div className="text-sm text-white/80">Expected Launch</div>
+              <div className="text-xl md:text-2xl font-bold">Q2 2025</div>
+              <div className="text-xs md:text-sm text-white/80">Expected Launch</div>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-illustration.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-secondary/30 to-background">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-secondary/30 to-background pt-20 md:pt-0">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 animate-float">
@@ -19,16 +19,16 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
-          <div className="text-center lg:text-left space-y-8 animate-fade-in">
-            <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+          <div className="text-center lg:text-left space-y-6 lg:space-y-8 animate-fade-in">
+            <div className="space-y-3 lg:space-y-4">
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight">
                 <span className="gradient-text">Ride, Rent,</span>
                 <br />
                 <span className="text-foreground">and Drive Together</span>
               </h1>
-              <p className="text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
+              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
                 Welcome to <span className="font-semibold text-primary">HpyRide.Com</span> — India's
                 all-in-one mobility platform for safe, affordable, and joyful travel.
               </p>
@@ -45,24 +45,24 @@ const HeroSection = () => {
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-8 pt-8">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-6 lg:gap-8 pt-4 lg:pt-8">
               <div className="text-center">
-                <div className="text-3xl font-bold gradient-text">10K+</div>
-                <div className="text-sm text-muted-foreground">Users Waiting</div>
+                <div className="text-2xl lg:text-3xl font-bold gradient-text">10K+</div>
+                <div className="text-xs lg:text-sm text-muted-foreground">Users Waiting</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold gradient-text">4</div>
-                <div className="text-sm text-muted-foreground">Cities Ready</div>
+                <div className="text-2xl lg:text-3xl font-bold gradient-text">4</div>
+                <div className="text-xs lg:text-sm text-muted-foreground">Cities Ready</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold gradient-text">100%</div>
-                <div className="text-sm text-muted-foreground">Safe Rides</div>
+                <div className="text-2xl lg:text-3xl font-bold gradient-text">100%</div>
+                <div className="text-xs lg:text-sm text-muted-foreground">Safe Rides</div>
               </div>
             </div>
           </div>
 
           {/* Right Illustration */}
-          <div className="relative animate-scale-in" style={{ animationDelay: "0.2s" }}>
+          <div className="relative animate-scale-in hidden lg:block" style={{ animationDelay: "0.2s" }}>
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
                 src={heroImage}

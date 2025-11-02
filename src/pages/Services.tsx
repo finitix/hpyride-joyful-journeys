@@ -84,7 +84,7 @@ const Services = () => {
               All Your Mobility Needs, <span className="gradient-text">One Platform</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              From daily commutes to weekend getaways, HpyRide has you covered with comprehensive mobility
+              From daily commutes to weekend getaways, HpyRide.Com has you covered with comprehensive mobility
               solutions designed for modern India.
             </p>
           </div>

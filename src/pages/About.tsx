@@ -30,7 +30,7 @@ const About = () => {
               The Future of Indian Mobility <span className="gradient-text">Begins Here</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              HpyRide is built to make daily travel safer, smarter, and more connected. We blend technology
+              HpyRide.Com is built to make daily travel safer, smarter, and more connected. We blend technology
               and trust to empower riders and drivers alike.
             </p>
           </div>
@@ -47,7 +47,7 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  <span className="font-semibold text-primary">HpyRide</span> is built to make daily travel
+                  <span className="font-semibold text-primary">HpyRide.Com</span> is built to make daily travel
                   safer, smarter, and more connected. We blend technology and trust to empower riders and
                   drivers alike.
                 </p>

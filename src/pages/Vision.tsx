@@ -60,7 +60,7 @@ const Vision = () => {
               Driven by <span className="gradient-text">Trust, Innovation, and Happiness</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              At HpyRide, we're not just building a platform — we're creating a movement that transforms how
+              At HpyRide.Com, we're not just building a platform — we're creating a movement that transforms how
               India moves, connects, and grows together.
             </p>
           </div>

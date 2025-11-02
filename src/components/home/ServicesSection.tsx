@@ -45,20 +45,20 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background via-secondary/30 to-background">
+    <section className="py-16 md:py-20 bg-gradient-to-b from-background via-secondary/30 to-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+        <div className="text-center mb-12 md:mb-16 animate-fade-in-up">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
             Our <span className="gradient-text">Mobility Solutions</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Everything you need for your daily commute and long journeys, all in one platform.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
           {services.map((service, index) => (
             <div
               key={service.title}
@@ -66,7 +66,7 @@ const ServicesSection = () => {
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               {/* Service Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-40 md:h-48 overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.title}
@@ -83,7 +83,7 @@ const ServicesSection = () => {
               </div>
 
               {/* Content */}
-              <div className="p-8">
+              <div className="p-6 md:p-8">
                 {/* Icon */}
                 <div className="mb-6">
                   <div className={`w-16 h-16 rounded-2xl flex items-center justify-center bg-gradient-to-br ${service.color}`}>
@@ -91,10 +91,10 @@ const ServicesSection = () => {
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-semibold mb-3 text-foreground">
+                <h3 className="text-xl md:text-2xl font-semibold mb-2 md:mb-3 text-foreground">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">{service.description}</p>
+                <p className="text-sm md:text-base text-muted-foreground mb-4 md:mb-6 leading-relaxed">{service.description}</p>
               </div>
             </div>
           ))}
