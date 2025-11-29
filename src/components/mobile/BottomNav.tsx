@@ -1,15 +1,28 @@
-import { Home, Info, Briefcase, Phone } from "lucide-react";
+import { Home, Info, Briefcase, ShieldCheck, HelpCircle } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 
 const BottomNav = () => {
   const location = useLocation();
+  const isMobile = useIsMobile();
 
-  const navItems = [
+  // Mobile-specific navigation
+  const mobileNavItems = [
+    { icon: Home, label: "Home", path: "/mobile" },
+    { icon: Info, label: "About", path: "/mobile/about" },
+    { icon: Briefcase, label: "Services", path: "/mobile/services" },
+    { icon: ShieldCheck, label: "Safety", path: "/mobile/safety" },
+    { icon: HelpCircle, label: "FAQs", path: "/mobile/faqs" },
+  ];
+
+  // Desktop navigation
+  const desktopNavItems = [
     { icon: Home, label: "Home", path: "/" },
     { icon: Info, label: "About", path: "/about" },
     { icon: Briefcase, label: "Services", path: "/services" },
-    { icon: Phone, label: "Contact", path: "/contact" },
   ];
+
+  const navItems = isMobile ? mobileNavItems : desktopNavItems;
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-background border-t border-border z-50 md:hidden">
