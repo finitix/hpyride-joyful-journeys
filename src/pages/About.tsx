@@ -1,7 +1,22 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Users, Target, Award } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 
 const About = () => {
+  const isMobile = useIsMobile();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isMobile) {
+      navigate("/mobile/about");
+    }
+  }, [isMobile, navigate]);
+
+  if (isMobile) {
+    return null;
+  }
   const team = [
     {
       name: "Rahul Sharma",

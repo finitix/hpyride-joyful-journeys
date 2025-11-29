@@ -1,12 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, MessageSquare, Linkedin, Instagram, Youtube } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 
 const Contact = () => {
+  const isMobile = useIsMobile();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isMobile) {
+      navigate("/mobile");
+    }
+  }, [isMobile, navigate]);
+
+  if (isMobile) {
+    return null;
+  }
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",

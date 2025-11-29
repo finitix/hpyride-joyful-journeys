@@ -1,7 +1,22 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Shield, Leaf, Users, Route, TrendingUp, Heart } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 
 const Vision = () => {
+  const isMobile = useIsMobile();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isMobile) {
+      navigate("/mobile");
+    }
+  }, [isMobile, navigate]);
+
+  if (isMobile) {
+    return null;
+  }
   const visionPillars = [
     {
       icon: Shield,
