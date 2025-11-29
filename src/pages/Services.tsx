@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Car, KeyRound, ShoppingCart, Users2, Shield, Clock, DollarSign } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -5,8 +7,21 @@ import rideSharingImg from "@/assets/service-ridesharing.jpg";
 import rentalImg from "@/assets/service-rental.jpg";
 import preOwnedImg from "@/assets/service-preowned.jpg";
 import poolingImg from "@/assets/service-pooling.jpg";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 
 const Services = () => {
+  const isMobile = useIsMobile();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isMobile) {
+      navigate("/mobile/services");
+    }
+  }, [isMobile, navigate]);
+
+  if (isMobile) {
+    return null;
+  }
   const services = [
     {
       id: "ride-sharing",
